@@ -1,0 +1,86 @@
+<!Doctype html>
+<html class="no-js" lang="en_US">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   
+    <link rel="stylesheet" href="css/main.css">
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
+</head>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+<section>
+<div class="container">
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+
+<input type=hidden name='captcha_settings' value='{"keyname":"WebToLeadApp","fallback":"true","orgId":"00D5g000005XFla","ts":""}'>
+<input type=hidden name="oid" value="00D5g000005XFla">
+<input type=hidden name="retURL" value="http://thank-you-page-heroku.herokuapp.com/">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="andrey.bobkovplk@gmail.com">                                     -->
+<!--  ----------------------------------------------------------------------  -->
+<div class="form-group">
+    <label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" oninput="checkParams()"/><br>
+</div>
+<div class="form-group">
+    <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" oninput="checkParams()"/><br>
+</div>
+<div class="form-group">
+    <label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" oninput="checkParams()"/><br>
+</div>
+<div class="form-group">
+    <label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="email" oninput="checkParams()"/><br>
+</div>
+<div class="form-group">
+    <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="tel" oninput="checkParams()"/><br>
+</div>
+<div class="form-group">
+    <select class="form-group" id="00N5g00000FibvW" >
+        <option class="form-group"value="R001C1">Renault Logan</option>
+        <option value="R002C2">Renault Logan Stepway</option>
+        <option value="R003C3">Renault Sandero</option>
+        <option value="R004C4">Renault Sandero Stepway</option>
+        <option value="R005E1">K7M</option>
+        <option value="R006E2">K4M</option>
+        <option value="R007E3">H4M</option>
+        <option value="HK001C1">Kia Rio</option>        
+      
+       </select>
+    
+</div>
+
+<div class="div-recaptcha">
+    <div class="g-recaptcha" data-sitekey="6Lds32QaAAAAANnkvCoXZ9IV-aOfiX2S6HTO2UKc"></div><br>
+</div>
+
+<div class="form-group">
+    <button id="submit" type="submit" class="submit-btn" name="submit" onclick="return callValidation();" disabled="disabled" > Submit </button>
+</div>
+
+</form>
+</div>
+</section>
+
+<script src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</html>
